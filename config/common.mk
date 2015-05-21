@@ -229,6 +229,7 @@ endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ownrom.version=$(OWNROM_VERSION)
+    ro.ownlegal.url=http://ownrom.nl/privacy-policy
 
 # statistics identity
 PRODUCT_PROPERTY_OVERRIDES += \
