@@ -229,6 +229,8 @@ else
     OWNROM_VERSION := OwnROM-$(OWNROM_VERSION_MAIN)-$(OWNROM_VERSION_MAJOR).$(OWNROM_VERSION_MINOR)-$(OWNROM_VERSION_STATE)-$(shell date +%Y.%m.%d)
 endif
 
+OWNROM_DISPLAY_VERSION := $(OWNROM_VERSION)
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ownrom.version=$(OWNROM_VERSION)
     ro.ownlegal.url=http://ownrom.nl/privacy-policy
