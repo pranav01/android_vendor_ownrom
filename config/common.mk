@@ -115,6 +115,11 @@ PRODUCT_COPY_FILES += \
 # T-Mobile theme engine
 include vendor/ownrom/config/themes_common.mk
 
+# SuperSU
+PRODUCT_COPY_FILES += \
+    vendor/ownrom/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/ownrom/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
 # Required OwnROM packages
 PRODUCT_PACKAGES += \
     Development \
