@@ -100,6 +100,9 @@ fi
 echo ""
 echo ""
 
+#Prebuilt Chromium
+export USE_PREBUILT_CHROMIUM=1
+
 sleep 2s
 #Clear terminal
 clear
