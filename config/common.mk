@@ -104,6 +104,11 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
+# Chromium Prebuilt
+ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+-include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
+endif
+
 # Enable wireless Xbox 360 controller support
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
@@ -216,13 +221,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGE_OVERLAYS += vendor/ownrom/overlay/common
 
 # version
-RELEASE = false
 OWNROM_VERSION_MAIN = ALPHA
 OWNROM_VERSION_MAJOR = 0
 OWNROM_VERSION_MINOR = 1
 
 # release
-ifeq ($(RELEASE),true)
+ifeq ($(OWNROM_RELEASE),true)
     OWNROM_VERSION := OwnROM-$(OWNROM_VERSION_MAIN)-$(OWNROM_VERSION_MAJOR).$(OWNROM_VERSION_MINOR)-OFFICIAL-$(shell date +%Y.%m.%d)
 else
     OWNROM_VERSION_STATE := UNOFFICIAL
@@ -232,6 +236,8 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ownrom.version=$(OWNROM_VERSION)
     ro.ownlegal.url=http://ownrom.nl/privacy-policy
+
+OWNROM_DISPLAY_VERSION := $(OWNROM_VERSION)
 
 # statistics identity
 PRODUCT_PROPERTY_OVERRIDES += \
