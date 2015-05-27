@@ -50,36 +50,65 @@ echo -e "Setting up environment"
 $normal
 . build/envsetup.sh
 echo -e "Environment set up"
-# Confirm 'make clean'
-echo -e "\n\n${bldgrn}  Do you want to make clean?\n"
-echo ""
-echo -e "${bldblu}  1. Yes"
-echo -e "${bldblu}  2. No"
-echo ""
-echo ""
-$normal
-read askClean
-
-echo ""
-echo ""
-if [ "$askClean" == "1" ]
+device=$1
+jobs=$2
+extra_make=$3
+if [ ! "$1" == "" ]
 then
-    echo -e "${bldred}  Compilation will continue after cleaning previous build files... "
-    $normal
-    make clobber
-    echo -e "Previous build files removed"
+export USE_PREBUILT_CHROMIUM=1
+breakfast $device
+fi
+if [ ! "$3" == "" ]
+then
+make $extra_make
+fi
+if [ ! "$2" == "" ]
+then
+if [ "$2" == "0" ]
+then
+mka ownrom
 else
-    echo -e "${bldred}  ROM will be compiled without cleaning previous build files... "
+make -j$jobs ownrom
+fi
+# Get elapsed time
+$blue
+res2=$(date +%s.%N)
+echo -e ""
+echo -e ""
+echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60"|bc ) minutes ($(echo "$res2 - $res1"|bc ) seconds) ${txtrst}"
+echo -e ""
+echo -e ""
+# Compilation complete
+tput bold
+tput setaf 1
+clear
+echo -e ""
+echo -e ""
+echo -e " ██████╗ ██████╗ ███╗   ███╗██████╗ ██╗██╗      █████╗ ████████╗██╗ ██████╗ ███╗   ██╗ "
+echo -e "██╔════╝██╔═══██╗████╗ ████║██╔══██╗██║██║     ██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║ "
+echo -e "██║     ██║   ██║██╔████╔██║██████╔╝██║██║     ███████║   ██║   ██║██║   ██║██╔██╗ ██║ "
+echo -e "██║     ██║   ██║██║╚██╔╝██║██╔═══╝ ██║██║     ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║ "
+echo -e "╚██████╗╚██████╔╝██║ ╚═╝ ██║██║     ██║███████╗██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║ "
+echo -e ""
+echo -e "                                                                                       "
+echo -e "         ██████╗ ██████╗ ███╗   ███╗██████╗ ██╗     ███████╗████████╗███████╗          "
+echo -e "        ██╔════╝██╔═══██╗████╗ ████║██╔══██╗██║     ██╔════╝╚══██╔══╝██╔════╝          "
+echo -e "        ██║     ██║   ██║██╔████╔██║██████╔╝██║     █████╗     ██║   █████╗            "
+echo -e "        ██║     ██║   ██║██║╚██╔╝██║██╔═══╝ ██║     ██╔══╝     ██║   ██╔══╝            "
+echo -e "        ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║     ███████╗███████╗   ██║   ███████╗          "
+echo -e "         ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚══════╝╚══════╝   ╚═╝   ╚══════╝          "
+echo -e ""
+echo -e ""
+# Switch terminal back to normal
+$normal
+exit;
 fi
 echo ""
 echo ""
-
-
-# Confirm fetching prebuilts
 echo -e "\n\n${bldgrn}  Do you want to fetch prebuilts?\n  (You don't need to fetch them frequently)"
 echo ""
 echo -e "${bldblu}  1. Yes"
-echo -e "${bldblu}  2. No"
+echo -e "${bldblu}  Anything else. No"
 echo ""
 echo ""
 $normal
