@@ -70,6 +70,9 @@ mka ownrom
 else
 make -j$jobs ownrom
 fi
+cd out/target/product/$device
+rm ownrom_$device-ota-*.zip
+cd ../../../..
 # Get elapsed time
 $blue
 res2=$(date +%s.%N)
@@ -155,6 +158,7 @@ $normal
 time mka ownrom
 #Better to use mka instead of make-j <number of threads> as most processors won't support 16 threads,mka automatically uses the maximum available
 echo -e ""
+rm out/target/product/*/ownrom_*-ota-*.zip
 # Get elapsed time
 $blue
 res2=$(date +%s.%N)
