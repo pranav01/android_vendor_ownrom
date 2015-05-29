@@ -84,7 +84,6 @@ echo -e ""
 # Compilation complete
 tput bold
 tput setaf 1
-clear
 echo -e ""
 echo -e ""
 echo -e " ██████╗ ██████╗ ███╗   ███╗██████╗ ██╗██╗      █████╗ ████████╗██╗ ██████╗ ███╗   ██╗ "
