@@ -1,8 +1,9 @@
 #!/bin/sh
 
 # Exports
-
-. $ANDROID_BUILD_TOP/vendor/ownrom/tools/colors
+dir=$ANDROID_BUILD_TOP
+out=$dir/out/target/product
+. $dir/vendor/ownrom/tools/colors
 
 export Changelog=Changelog.txt
 
@@ -35,13 +36,13 @@ done
 
 sed -i 's/project/   */g' $Changelog
 
-if [ -e $OUT/$Changelog ]
+if [ -e $out/*/$Changelog ]
 then
-rm $OUT/$Changelog
+rm $out/*/$Changelog
 fi
-if [ -e $OUT/system/etc/$Changelog ]
+if [ -e $out/*/system/etc/$Changelog ]
 then
-rm $OUT/system/etc/$Changelog
+rm $out/*/system/etc/$Changelog
 fi
 cp $Changelog $OUT/system/etc/
 cp $Changelog $OUT/
