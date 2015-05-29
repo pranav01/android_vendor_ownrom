@@ -2,7 +2,7 @@
 . $ANDROID_BUILD_TOP/vendor/ownrom/tools/colors
 echo -e "$txtbld $cya Syncing OwnROM repositories......"
 $normal
-for repository in $(cat . $ANDROID_BUILD_TOP/vendor/ownrom/tools/ownrom-repos)
+for repository in $(cat . vendor/ownrom/tools/ownrom-repos)
 do
 echo -e "$red Syncing $repository"
 cd $ANDROID_BUILD_TOP
