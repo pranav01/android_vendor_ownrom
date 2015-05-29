@@ -1,7 +1,7 @@
 #! /bin/bash
 if [ -e ".repo" ]
 then
-. build/envsetup.sh
+. build/envsetup.sh > /dev/null
 dir=$ANDROID_BUILD_TOP
 tools=$dir/vendor/ownrom/tools
 . $tools/colors
