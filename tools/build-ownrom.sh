@@ -106,31 +106,6 @@ echo -e ""
 $normal
 exit;
 fi
-echo ""
-echo ""
-echo -e "\n\n${bldgrn}  Do you want to fetch prebuilts?\n  (You don't need to fetch them frequently)"
-echo ""
-echo -e "${bldblu}  1. Yes"
-echo -e "${bldblu}  Anything else. No"
-echo ""
-echo ""
-$normal
-read askPrebuilts
-
-echo ""
-echo ""
-if [ "$askPrebuilts" == "1" ]
-then
-    echo -e "${bldred}  Prebuilts will be fetched... "
-    $normal
-    cd vendor/ownrom/tools
-    ./get-prebuilts
-    croot
-else
-    echo -e "${bldred}  Prebuilts won't be fetched... "
-fi
-echo ""
-echo ""
 
 #Prebuilt Chromium
 export USE_PREBUILT_CHROMIUM=1
