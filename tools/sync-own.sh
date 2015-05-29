@@ -2,15 +2,17 @@
 if [ -e ".repo" ]
 then
 . build/envsetup.sh
-. $ANDROID_BUILD_TOP/vendor/ownrom/tools/colors
+dir=$ANDROID_BUILD_TOP
+tools=$dir/vendor/ownrom/tools
+. $tools/colors
 echo -e "$txtbld $cya Syncing OwnROM repositories......"
 $normal
-for repository in $(cat . $ANDROID_BUILD_TOP/vendor/ownrom/tools/ownrom-repos)
+for repository in $(cat $tools/ownrom-repos)
 do
-echo -e "$red Syncing $repository"
-cd $ANDROID_BUILD_TOP
-echo -e "$blu  `repo sync $repository | grep -i 'fetching'`"
-echo -e "$grn Synced $repository"
+echo -e "$bldred Syncing $repository"
+cd $dir
+echo -e "$bldblu  `repo sync $repository | grep -i 'fetching'`"
+echo -e "$bldgrn Synced $repository"
 done
 $normal
 else
