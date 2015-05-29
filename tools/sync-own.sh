@@ -9,15 +9,14 @@ echo -e "$bldblu Syncing OwnROM repositories......"
 $normal
 for repository in $(cat $tools/ownrom-repos)
 do
-cd $dir
 echo -e "$bldred Syncing $repository"
-echo -e "$bldcya  `repo sync $repository | grep -i 'fetching'`"
+echo -e "$bldcya `repo sync $repository`"
 echo -e "$bldgrn Synced $repository"
 echo -e ""
 done
 $normal
 else
-echo -e "Please make sure you are running this is the root of your build directory"
+echo -e "Please make sure you are running this in the root of your build directory"
 exit;
 fi
 
