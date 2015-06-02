@@ -48,7 +48,7 @@ clear
 #Setup environment now
 echo -e "Setting up environment"
 $normal
-. build/envsetup.sh
+. build/ownrom.sh
 echo -e "Environment set up"
 device=$1
 jobs=$2
@@ -62,7 +62,7 @@ if [ ! "$3" == "" ]
 then
 make $extra_make
 fi
-if [ ! "$2" == "" ]
+if [ ! "$2" == "" 
 then
 if [ "$2" == "0" ]
 then
