@@ -4,3 +4,5 @@ vendor/ownrom
 build
 bionic
 android
+frameworks/native
+development
