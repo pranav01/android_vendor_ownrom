@@ -128,7 +128,6 @@ PRODUCT_COPY_FILES += \
 # Required OwnROM packages
 PRODUCT_PACKAGES += \
     Development \
-    LatinIME \
     BluetoothExt \
     Profiles
 
