@@ -144,7 +144,6 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     Trebuchet \
     AudioFX \
-#    OwnWallpapers \
     CMFileManager \
     Eleven \
     LockClock \
