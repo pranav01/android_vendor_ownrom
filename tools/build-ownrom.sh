@@ -62,7 +62,7 @@ if [ ! "$3" == "" ]
 then
 make $extra_make
 fi
-if [ ! "$2" == "" 
+if [ ! "$2" == "" ]
 then
 if [ "$2" == "0" ]
 then
