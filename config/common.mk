@@ -147,7 +147,8 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     Eleven \
     LockClock \
-    CMHome
+    CMHome \
+    OwnWallpapers
 
 # OwnROM (From CM) Platform Library
 PRODUCT_PACKAGES += \
