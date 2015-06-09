@@ -48,15 +48,21 @@ clear
 #Setup environment now
 echo -e "Setting up environment"
 $normal
-. build/envsetup.sh
+. build/ownrom.sh
 echo -e "Environment set up"
+export USE_PREBUILT_CHROMIUM=1
+if [ ! "$@" == "" ]
+then
 device=$1
 jobs=$2
 extra_make=$3
-if [ ! "$1" == "" ]
+if [ ! "$device" == "" ]
 then
-export USE_PREBUILT_CHROMIUM=1
 breakfast $device
+if [ "$jobs" == "" ]
+then
+mka ownrom
+fi
 fi
 if [ ! "$3" == "" ]
 then
@@ -103,15 +109,8 @@ echo -e ""
 echo -e ""
 # Switch terminal back to normal
 $normal
-exit;
 fi
-
-#Prebuilt Chromium
-export USE_PREBUILT_CHROMIUM=1
-
-sleep 2s
-#Clear terminal
-clear
+else
 echo -e ""
 echo -e ""
 echo -e "Choose your device from the lunch menu being displayed. Enter the number of your device"
@@ -163,7 +162,7 @@ echo -e "         ╚═════╝ ╚═════╝ ╚═╝     ╚�
 echo -e ""
 echo -e ""
 
-
 # Switch terminal back to normal
 $normal
+fi
 
