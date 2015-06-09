@@ -148,6 +148,7 @@ PRODUCT_PACKAGES += \
     Eleven \
     LockClock \
     CMHome \
+    KernelAdiutor \
     OwnWallpapers
 
 # OwnROM (From CM) Platform Library
