@@ -148,7 +148,8 @@ PRODUCT_PACKAGES += \
     LockClock \
     CMHome \
     KernelAdiutor \
-    OwnWallpapers
+    OwnWallpapers \
+    OTACenter
 
 # OwnROM (From CM) Platform Library
 PRODUCT_PACKAGES += \
@@ -234,8 +235,9 @@ else
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.ownrom.version=$(OWNROM_VERSION)
-    ro.ownlegal.url=http://ownrom.nl/privacy-policy
+    ro.ownrom.version=$(OWNROM_VERSION) \
+    ro.ownlegal.url=http://ownrom.nl/privacy-policy \
+    own.ota.version=$(shell date -u +%Y.%m.%d)
 
 OWNROM_DISPLAY_VERSION := $(OWNROM_VERSION)
 
