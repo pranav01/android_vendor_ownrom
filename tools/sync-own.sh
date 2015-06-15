@@ -5,11 +5,14 @@ then
 dir=$ANDROID_BUILD_TOP
 tools=$dir/vendor/ownrom/tools
 . $tools/colors
-echo -e "$bldblu Syncing OwnROM repositories......"
+echo -e "$bldred Syncing OwnROM repositories......"
 $normal
 for repository in $(cat $tools/ownrom-repos)
 do
-echo -e "$bldred Syncing $repository"
+cd $repository
+git reset --hard HEAD
+cd $dir
+echo -e "$bldblu Syncing $repository"
 echo -e "$bldcya `repo sync $repository`"
 echo -e "$bldgrn Synced $repository"
 echo -e ""
