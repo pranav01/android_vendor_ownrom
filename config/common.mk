@@ -237,7 +237,14 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ownrom.version=$(OWNROM_VERSION) \
     ro.ownlegal.url=http://ownrom.nl/privacy-policy \
-    own.ota.version=$(shell date -u +%Y%m%d)
+    own.ota.version=$(shell date -u +%Y%m%d) \
+    ro.romstats.url=http://owndroid.nl/Stats \
+    ro.romstats.name=OwnROM \
+    ro.romstats.version=5.1.1 \
+    ro.romstats.tframe=7 
+  
+PRODUCT_COPY_FILES += \
+    vendor/ownrom/prebuilt/common/RomStats.apk:system/app/RomStats/RomStats.apk
 
 OWNROM_DISPLAY_VERSION := $(OWNROM_VERSION)
 
