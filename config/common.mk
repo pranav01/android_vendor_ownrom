@@ -149,7 +149,7 @@ PRODUCT_PACKAGES += \
     CMHome \
     KernelAdiutor \
     OwnWallpapers \
-    OTACenter
+    OwnOTA
 
 # OwnROM (From CM) Platform Library
 PRODUCT_PACKAGES += \
