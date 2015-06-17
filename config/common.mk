@@ -240,7 +240,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     own.ota.version=$(shell date -u +%Y%m%d) \
     ro.romstats.url=http://owndroid.nl/Stats \
     ro.romstats.name=OwnROM \
-    ro.romstats.version=5.1.1 \
+    ro.romstats.version=$(OWNROM_VERSION_STATE)-$(OWNROM_VERSION_MAIN)-$(OWNROM_VERSION_MAJOR).$(OWNROM_VERSION_MINOR) \
     ro.romstats.tframe=7 
   
 PRODUCT_COPY_FILES += \
