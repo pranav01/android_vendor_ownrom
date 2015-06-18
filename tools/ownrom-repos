@@ -9,5 +9,5 @@ development
 packages/apps/OwnWallpapers
 frameworks/av
 frameworks/opt/cards
-packages/apps/OTACenter
+packages/apps/OwnOTA
 packages/apps/DeskClock
