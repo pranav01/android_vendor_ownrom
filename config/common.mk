@@ -206,7 +206,7 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_ffmpegadec \
     libstagefright_soft_ffmpegvdec \
     libFFmpegExtractor \
-    libnamparser
+    media_codecs_ffmpeg.xml
 
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
@@ -230,7 +230,7 @@ OWNROM_VERSION_MINOR = 4
 ifeq ($(OWNROM_RELEASE),true)
     OWNROM_VERSION := OwnROM-$(OWNROM_BUILD)-$(OWNROM_VERSION_MAIN)-$(OWNROM_VERSION_MAJOR).$(OWNROM_VERSION_MINOR)-OFFICIAL-$(shell date +%Y%m%d)
 else
-    OWNROM_VERSION_STATE := UNOFFICIAL
+    OWNROM_VERSION_STATE := NIGHTLY
     OWNROM_VERSION := OwnROM-$(OWNROM_BUILD)-$(OWNROM_VERSION_MAIN)-$(OWNROM_VERSION_MAJOR).$(OWNROM_VERSION_MINOR)-$(OWNROM_VERSION_STATE)-$(shell date +%Y%m%d)
 endif
 

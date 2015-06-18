@@ -1,0 +1,23 @@
+From 597025012dacdd54251b5abfdcb30fc8a9b60d7e Mon Sep 17 00:00:00 2001
+From: Steve Kondik <steve@cyngn.com>
+Date: Thu, 18 Jun 2015 02:22:35 -0700
+Subject: [PATCH] cm: Update stagefright-plugins depdendencies
+
+Change-Id: I6be5eea82fc850e837a830de302cd136ad3dc924
+---
+ config/common.mk | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/config/common.mk b/config/common.mk
+index 85a2173..fa2034a 100644
+--- a/config/common.mk
++++ b/config/common.mk
+@@ -205,7 +205,7 @@ PRODUCT_PACKAGES += \
+     libstagefright_soft_ffmpegadec \
+     libstagefright_soft_ffmpegvdec \
+     libFFmpegExtractor \
+-    libnamparser
++    media_codecs_ffmpeg.xml
+ 
+ # These packages are excluded from user builds
+ ifneq ($(TARGET_BUILD_VARIANT),user)
