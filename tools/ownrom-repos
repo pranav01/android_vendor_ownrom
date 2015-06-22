@@ -11,3 +11,4 @@ frameworks/av
 frameworks/opt/cards
 packages/apps/OwnOTA
 packages/apps/DeskClock
+packages/apps/Bluetooth
