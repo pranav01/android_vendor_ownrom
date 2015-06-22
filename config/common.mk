@@ -237,7 +237,7 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ownrom.version=$(OWNROM_VERSION) \
     ro.ownlegal.url=http://ownrom.nl/privacy-policy \
-    own.ota.version=$(shell date -u +%Y%m%d) \
+    own.ota.version=$(shell date +%Y%m%d) \
     ro.romstats.url=http://owndroid.nl/Stats \
     ro.romstats.name=OwnROM \
     ro.romstats.version=$(OWNROM_VERSION_STATE)-$(OWNROM_VERSION_MAIN)-$(OWNROM_VERSION_MAJOR).$(OWNROM_VERSION_MINOR) \
