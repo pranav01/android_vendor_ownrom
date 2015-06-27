@@ -245,9 +245,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Copy Prebuilt apps:  
 PRODUCT_COPY_FILES += \
-    vendor/ownrom/prebuilt/common/RomStats.apk:system/app/RomStats/RomStats.apk \
-    vendor/ownrom/prebuilt/common/OpenCamera.apk:system/app/OpenCamera/OpenCamera.apk \
-    vendor/ownrom/prebuilt/common/V4A.apk:system/app/V4A/V4A.apk
+    vendor/ownrom/prebuilt/common/RomStats.apk:system/app/RomStats/RomStats.apk
 
 OWNROM_DISPLAY_VERSION := $(OWNROM_VERSION)
 
