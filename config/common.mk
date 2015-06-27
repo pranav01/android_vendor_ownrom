@@ -150,7 +150,8 @@ PRODUCT_PACKAGES += \
     KernelAdiutor \
     OwnWallpapers \
     OwnOTA \
-    OpenCamera
+    OpenCamera \
+    V4A
 
 # OwnROM (From CM) Platform Library
 PRODUCT_PACKAGES += \
