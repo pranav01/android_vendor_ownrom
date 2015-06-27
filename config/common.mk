@@ -149,9 +149,7 @@ PRODUCT_PACKAGES += \
     CMHome \
     KernelAdiutor \
     OwnWallpapers \
-    OwnOTA \
-    OpenCamera \
-    V4A
+    OwnOTA 
 
 # OwnROM (From CM) Platform Library
 PRODUCT_PACKAGES += \
@@ -244,9 +242,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.romstats.name=OwnROM \
     ro.romstats.version=$(OWNROM_VERSION_STATE)-$(OWNROM_VERSION_MAIN)-$(OWNROM_VERSION_MAJOR).$(OWNROM_VERSION_MINOR) \
     ro.romstats.tframe=7 
-  
+
+# Copy Prebuilt apps:  
 PRODUCT_COPY_FILES += \
-    vendor/ownrom/prebuilt/common/RomStats.apk:system/app/RomStats/RomStats.apk
+    vendor/ownrom/prebuilt/common/RomStats.apk:system/app/RomStats/RomStats.apk \
+    vendor/ownrom/prebuilt/common/OpenCamera.apk:system/app/OpenCamera/OpenCamera.apk \
+    vendor/ownrom/prebuilt/common/V4A.apk:system/app/V4A/V4A.apk
 
 OWNROM_DISPLAY_VERSION := $(OWNROM_VERSION)
 
